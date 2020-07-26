@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  React.createElement('h1', null, 'Hello from React!'),
   document.getElementById('root')
 );
