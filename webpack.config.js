@@ -1,31 +1,39 @@
 module.exports = {
-    entry: __dirname + "/src/index.js",
-    output: {
-        path: __dirname + "/public",
-        filename: "index.html",
-        chunkFilename: '[name].html'
-    },
-    devServer: {
-        contentBase: __dirname + "/public/index.html",
-        inline: true,
-        host: '0.0.0.0',
-        port: 8080,
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.(jpg|jpeg|gif|png|ico)$/,
-                exclude: /node_modules/,
-                loader: 'file-loader?name=[name].[ext]'
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ["es2016", "react", "env", "stage-2"]
-                }
+  entry: [
+    './src/index.js'
+  ],
+  output: {
+    path: __dirname,
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[name]_[local]_[hash:base64]",
+              sourceMap: true,
+              minimize: true
             }
+          }
         ]
-    }
+      }
+    ]
+  }
 };

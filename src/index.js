@@ -5,6 +5,10 @@ import * as serviceWorker from "./serviceWorker";
 import Volunteer from "./components/volunteer";
 import "bootstrap/dist/css/bootstrap.css";
 
+const Root = () => {
+  return <div>Hello React! You are ready for heroku</div>;
+};
+
 ReactDOM.render(
   <React.StrictMode>
     <Volunteer />
