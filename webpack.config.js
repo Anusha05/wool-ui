@@ -6,7 +6,7 @@ module.exports = {
         chunkFilename: '[name].html'
     },
     devServer: {
-        contentBase: __dirname + "/public/",
+        contentBase: __dirname + "/public/index.html",
         inline: true,
         host: '0.0.0.0',
         port: 8080,
