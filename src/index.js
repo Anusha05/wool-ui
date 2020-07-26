@@ -7,21 +7,12 @@
 //);
 
 
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import * as serviceWorker from "./serviceWorker";
-import Volunteer from "./components/volunteer";
-import "bootstrap/dist/css/bootstrap.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const element = <h1>Hello from React!</h1>;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Volunteer />
-  </React.StrictMode>,
-  document.getElementById("root")
+  element,
+  document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
